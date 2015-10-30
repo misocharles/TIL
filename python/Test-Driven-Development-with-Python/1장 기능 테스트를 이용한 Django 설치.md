@@ -31,8 +31,8 @@ $ sudo pip3 install --upgrade selenium
 
 ## 테스팅 고트님께 복종하라! 테스트가 없으면 아무것도 하지 마라!
 
-테스트를 잘하기 위한 고약한 스승이 필요하다 "Testing Goat"
-TDD에서 가장 먼저 해야 할 것 "테스트를 작성하라"
+- 테스트를 잘하기 위한 고약한 스승이 필요하다 "Testing Goat"
+- TDD에서 가장 먼저 해야 할 것 "테스트를 작성하라"
 
 첫 번째 단계는 Django의 정상 설치 여부
 
@@ -46,9 +46,9 @@ browser.get('http://localhost:8080')
 assert 'Django' in browser.title
 ```
 
-파이어폭스 브라우저 창을 실행하기 위해 셀레늄의 webdriver 가동
-브라우저를 통해 로컬 PC상의 웹페이지를 연다
-웹 페이지 타이틀에 'Django'라는 단어가 있는지 확인
+- 파이어폭스 브라우저 창을 실행하기 위해 셀레늄의 webdriver 가동
+- 브라우저를 통해 로컬 PC상의 웹페이지를 연다
+- 웹 페이지 타이틀에 'Django'라는 단어가 있는지 확인
 
 ```bash
 $ python3 functional_test.py 
@@ -135,7 +135,7 @@ $ cd superlists/
 $ git init .
 ```
 
-불필요한 파일 설정
+불필요한 파일 설정 (.gitignore)
 
 ```bash
 $ echo "db.sqlite3" >> .gitignore
