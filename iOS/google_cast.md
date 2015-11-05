@@ -67,9 +67,29 @@ Installing google-cast-sdk (2.10.0)
     - [ ] MediaPlayer.framework
     - [ ] SystemConfiguration.framework
 
-	- GoogleCast.framework 는 `Link Binary With Libraries` 에서 추가할 수가 없었다. 일단 추가하지 않고 작업 진행
-		- 여기서 추가 정보를 얻을 수 있을까? http://guides.cocoapods.org/using/using-cocoapods.html#what-is-happening-behind-the-scenes
+- 특이사항: GoogleCast.framework 는 `Link Binary With Libraries` 에서 추가할 수 없었다. 일단 추가하지 않고 작업 진행
+	- 여기서 추가 정보를 얻을 수 있을까? http://guides.cocoapods.org/using/using-cocoapods.html#what-is-happening-behind-the-scenes
+	- 이 소스에서는 https://github.com/googlecast/CastHelloText-ios CocoaPods 사용에는 Library를 별도로 추가하지 않는데?
 
 - The Google Cast SDK does not support bitcode. In your Xcode project, go to **Build Settings > All** and set **Enable Bitcode** to **No**.
 
 ### Development
+
+구글 캐스트 SDK는 이벤트의 응용 프로그램을 통보하고 Cast 앱 생명주기(life cycle)의 다양한 상태 사이를 이동할 Delegate 패턴을 사용합니다.
+
+#### 애플리케이션 흐름
+
+다음 섹션은 Sender 애플리케이션 일반적인 실행 흐름의 세부 사항을 포함한다 :
+
+- 장치 검색 Scan for devices
+- 장치 선택 Select device
+- 앱 실행 Launch application
+- 미디어 채널 Work with media channels
+- 미디어 호출 Load the media
+
+#### 장치 검색
+
+이 단계에서는 sender 애플리케이션은 Google Cast receiver 단말기에 대한 WiFi 네트워크를 찾는다. 장치 스캐너와 delegate를 인스턴스화하고 검색을 시작하는 것을 포함한다. (This involves instantiating a device scanner, a delegate, and starting the scan.) 스캐너가 장치를 발견했을 때, delegate를 통해 애플리케이션에 통보한다.
+
+
+
