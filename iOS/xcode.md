@@ -26,3 +26,8 @@ Remove all cached data:
 
 Window > Package Manager 
 
+### FuzzyAutocompletePlugin
+
+Xcode 자동 완성 기능을 완벽하게 지원해주는 플러그인
+
+https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin
