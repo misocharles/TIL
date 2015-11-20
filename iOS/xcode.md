@@ -26,3 +26,19 @@ Remove all cached data:
 
 Window > Package Manager 
 
+## plugin 추천
+
+### RTImageAssets
+
+Xcode 에서 이미지를 자동으로 생성해주는 플러그인. 예) @3x 이미지에서 @2x 이미지를 만들어준다.
+
+https://github.com/rickytan/RTImageAssets
+
+### BBUFullIssueNavigator
+
+이슈 네비게이터(issue navigator) 에서 이슈 전체 내용을 보여준다. Preferences > General > Issue Navigator Detail 에서 줄 수를 선택할 수 있다.
+
+https://github.com/neonichu/BBUFullIssueNavigator
+
+
+
