@@ -46,3 +46,8 @@ Xcode 자동 완성 기능을 완벽하게 지원해주는 플러그인
 
 https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin
 
+### GitDiff
+
+Xcode 에서 Git 의 마지막 커밋과 비교해 변경 사항을 표시해준다.
+
+https://github.com/johnno1962/GitDiff
