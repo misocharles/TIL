@@ -24,7 +24,7 @@ Remove all cached data:
 
 ### 실행
 
-Window > Package Manager 
+Window > Package Manager
 
 ## plugin 추천
 
@@ -46,3 +46,20 @@ Xcode 자동 완성 기능을 완벽하게 지원해주는 플러그인
 
 https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin
 
+
+# Xcode
+
+## Build Phases
+
+### 빌드할 때 buildNumber 자동 증가
+
+- Run Script 추가 
+- Shell : /bin/sh
+
+```
+buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
+buildNumber=$(($buildNumber + 1))
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "$INFOPLIST_FILE"
+```
+
+불필요하게 commit 할 내용이 생겨서 script 제거함. 추적이 필요한 내용이라 .gitignore 에 넣기도 애매했음.
