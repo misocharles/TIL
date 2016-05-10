@@ -58,7 +58,7 @@ https://github.com/johnno1962/GitDiff
 
 ### 빌드할 때 buildNumber 자동 증가
 
-- Run Script 추가 
+- Run Script 추가
 - Shell : /bin/sh
 
 ```
@@ -68,3 +68,13 @@ buildNumber=$(($buildNumber + 1))
 ```
 
 불필요하게 commit 할 내용이 생겨서 script 제거함. 추적이 필요한 내용이라 .gitignore 에 넣기도 애매했음.
+
+## Simulator
+
+### Uninstall simulator
+
+You can remove them from `/Library/Developer/CoreSimulator/Profiles/Runtimes`
+
+![simruntime 파일 삭제](http://i.stack.imgur.com/fTJvE.png)
+
+> http://stackoverflow.com/a/30940055
