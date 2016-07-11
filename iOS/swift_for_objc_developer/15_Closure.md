@@ -2,7 +2,7 @@
 
 ## 1. Capturing Value 값 획득 ##
 
-클로저를 잘 이해하기 위해서는 앞에서 살펴본 함수 형식(Function Type)과 값 획득(Capturing Value)에 대해 알아야 합니다. 값 획득은 클로저가 선언되어 있는 범위(Scope)에 있는 상수나 변수를 클로저 내에서도 사용할 수 있도록 해 주는 기능입니다. 클로저가 획득한 값은 원래의 사용 범위를 벗어나더라도 클로저가 싫애되는 동안 계속 존재합니다.
+클로저를 잘 이해하기 위해서는 앞에서 살펴본 함수 형식(Function Type)과 값 획득(Capturing Value)에 대해 알아야 합니다. 값 획득은 클로저가 선언되어 있는 범위(Scope)에 있는 상수나 변수를 클로저 내에서도 사용할 수 있도록 해 주는 기능입니다. 클로저가 획득한 값은 원래의 사용 범위를 벗어나더라도 클로저가 실행되는 동안 계속 존재합니다.
 
 ```swift
 func outer(outerParam: Int) {
@@ -84,10 +84,10 @@ languages.sort({ (lhs: String, rhs: String) -> Bool in
 `languages.sort({(lhs: String, rhs: Stirng) -> Bool })`
 3. `in` 키워드를 통해 클로저 선언 부분을 마무리하고 구현 부분을 시작합니다.  
 `languages.sort({(lhs: String, rhs: Stirng) -> Bool in })`
-4. 클로저의 구혀ㅑㄴ을 완료합니다. 함수와 달리 클로저의 구현 부분은 {}를 가지지 않습니다.  
+4. 클로저의 구현을 완료합니다. 함수와 달리 클로저의 구현 부분은 {}를 가지지 않습니다.  
 `languages.sort({(lhs: String, rhs: Stirng) -> Bool in return lhs > rhs})`
 
-swift는 sort 클로저 파라미터의 함수 형식을 추론할 수 있습니다. 그래서 다음과 같이 파라미터의 자료형과 파라미터 목록을 감싸는 괄호, 리턴형을 생략할 수 있습니다.  
+swift는 sort 클로저 파라미터의 함수 형식을 추론할 수 있습니다. 그래서 다음과 같이 파라미터의 자료형과 파라미터 목록을 감싸는 괄호와 리턴형을 생략할 수 있습니다.  
 `languages.sort({lhs, rhs in return lhs > rhs})`
 
 클로저 표현식으로 작성한 인라인 클로저를 함수의 파라미터로 전달하는 경우에는 항상 형식 추론(Type Inference)이 가능합니다. 자료형과 리턴형을 명시적으로 포함하는 방식은 함수 형식을 직관적으로 인식할 수 있다는 장점이 있지만 swift에서는 생략된 방식을 주로 사용합니다. 이것은 선택사항이므로 프로그래머 선택에 달렸습니다.
