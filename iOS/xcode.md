@@ -69,6 +69,19 @@ buildNumber=$(($buildNumber + 1))
 
 불필요하게 commit 할 내용이 생겨서 script 제거함. 추적이 필요한 내용이라 .gitignore 에 넣기도 애매했음.
 
+### TODO 메시지 warning 탭에서 모아 보기
+
+- Run Script 추가
+- Shell : /bin/sh
+- ${SRCROOT}/${TARGET_NAME}* 로 설정해서 cocoapods 소스는 제외했다.
+
+```
+KEYWORDS="TODO|FIXME|\?\?\?:|\!\!\!:"
+find ${SRCROOT}/${TARGET_NAME}* \( -name "*.h" -or -name "*.m" -or -name "*.swift" \) -print0 | \
+xargs -0 egrep --with-filename --line-number --only-matching "($KEYWORDS).*\$" | \
+perl -p -e "s/($KEYWORDS)/ warning: \$1/"
+```
+
 ## Simulator
 
 ### Uninstall simulator
