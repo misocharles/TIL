@@ -1,0 +1,8 @@
+
+### 2015-06-26T00:10:00+01:00
+
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZZZ"
+let dateString = formatter.string(from: Date())
+
+[How to get yyyy-mm-dd hh:mm:ss format from “2015-06-26T00:10:00+01:00” in swift](http://stackoverflow.com/a/31160565)
