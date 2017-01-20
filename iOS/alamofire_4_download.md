@@ -79,3 +79,22 @@ DownloadManager.sharedInstance.manager.download(urlString, to: destination)
 DownloadRequest 에서 제공하는 기본값도 있다.
 
 `let destination = DownloadRequest.suggestedDownloadDestination()`
+
+## download 오류 발생
+
+Wifi와 3G/LTE간 네트워크가 변경되면서 진행 중인 download가 종료되는 현상이 발생하였다. 원인은 CDN 인증 방식이었다. download url에 포함된 key값에 해당 클라이언트 IP가 포함되어 있어서, 네트워크 변경으로 인증 key의 인증이 실패되었다.
+
+Alamofire 3.x 버전에서 `.response` 메소드를 사용했는데, 위 에러가 발생하면 error가 nil로 반환되었다. 그래서 정상적으로 다운로드가 완료되었다고 판단되는 오류가 발생했다. 그래서 `responseData`를 사용하여 오류를 확인하였고, 정상적으로 처리할 수 있었다.
+
+```Swift
+    .responseData { response in
+        debugPrint(response)
+
+        switch response.result {
+        case .Success:
+            print("Success")
+        case .Failure(let error):
+            print(error)
+        }
+    }
+```
