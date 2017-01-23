@@ -98,3 +98,11 @@ Alamofire 3.x 버전에서 `.response` 메소드를 사용했는데, 위 에러�
         }
     }
 ```
+
+네트워크 변경으로 다운로드가 끊기는 경우 에러를 받아내지 못하는 버그가 있어서, `responseData`를 사용했는데 정상적인 상황에서도 `-6004 "Data could not be serialized. Input data was nil."` 오류가 발생하였다.
+
+https://github.com/Alamofire/Alamofire/issues/1306#issuecomment-225460041
+
+You cannot use the `responseData` serializer with the `download` API. You instead need to use the `response` API and check the `error` parameter. Then you need to read the data our of the filePath that you moved the file to in the `Destination` closure. Here's a [link](https://github.com/Alamofire/Alamofire#downloading-a-file-wprogress) to the README that demonstrates how to do this.
+
+`download` API에서는 `responseData`를 사용할 수 없다고 하여, 기존 `response` 로 복구하고 다른 방법을 사용하였다. 네트워크 변경 event 발생시 `Request`의 `cancel()` 메서드를 호출했다. `response` 에 `canceled` 오류가 반환되어 정상적으로 처리할 수 있었다.
