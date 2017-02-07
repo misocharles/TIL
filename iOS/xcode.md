@@ -91,3 +91,9 @@ You can remove them from `/Library/Developer/CoreSimulator/Profiles/Runtimes`
 ![simruntime 파일 삭제](http://i.stack.imgur.com/fTJvE.png)
 
 > http://stackoverflow.com/a/30940055
+
+## Debug
+
+### More than `po`: Debugging in lldb
+
+http://www.slideshare.net/micheletitolo/more-than-po-debugging-in-lldb
