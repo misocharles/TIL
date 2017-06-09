@@ -35,3 +35,9 @@ $ hidutil property --get "UserKeyMapping"
     }
 )
 ```
+
+### 환경설정 > 키보드
+
+환경설정 > 키보드 > 보조키에서 키를 바꿀 수 있다고 한다.
+
+![스크린샷 2017-06-09 오전 10.33.35](http://i.imgur.com/2YT3Cdk.png)
